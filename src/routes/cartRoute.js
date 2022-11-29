@@ -9,7 +9,7 @@ const router = require('express').Router();
 /**
  * GET cart by user id
  */
-router.get("/:userId", async (req, res) => {
+router.get('/:userId', async (req, res) => {
     const foundCart = await getOrCreateCart(req.params.userId);
 
     res.status(StatusCodes.OK).send(foundCart);
@@ -18,13 +18,13 @@ router.get("/:userId", async (req, res) => {
 /**
  * PUT request
  */
-router.put("/:userId", isAuthenticated, isAuthorized, async (req, res) => {
+router.put('/:userId', isAuthenticated, isAuthorized, async (req, res) => {
     try {
-        const updatedCart = await findOneAndUpdate({userId: req.params.userId}, 
+        const updatedCart = await findOneAndUpdate({ userId: req.params.userId }, 
             {
                 $set: req.body,
             },
-            {new: true}
+            { new: true }
         );
     
         res.status(StatusCodes.OK).send(updatedCart);

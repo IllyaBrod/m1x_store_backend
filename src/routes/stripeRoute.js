@@ -14,7 +14,7 @@ router.post('/payment', (req, res) => {
         } else {
             res.status(StatusCodes.OK).send(stripeRes);
         }
-    })
-})
+    });
+});
 
 module.exports = router;

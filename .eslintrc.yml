@@ -1,0 +1,62 @@
+env:
+  browser: true
+  es6: true
+  node: true
+
+parser: "@babel/eslint-parser"
+
+parserOptions:
+  ecmaVersion: 6
+  requireConfigFile: false
+  sourceType: module
+rules:
+  brace-style:
+    - error
+    - 1tbs
+  comma-style:
+    - error
+    - last
+  comma-spacing: error
+  indent:
+    - error
+    - 4
+    - SwitchCase: 1
+  no-dupe-else-if:
+    - error
+  no-duplicate-imports: error
+  no-extra-parens:
+    - error
+    - functions
+  no-lonely-if:
+    - error
+  no-mixed-spaces-and-tabs: error
+  no-unreachable: error
+  no-unreachable-loop: error
+  no-useless-return: error
+  object-curly-spacing:
+    - error
+    - always
+  semi-spacing:
+    - error
+    - before: false
+      after: true
+  space-before-blocks:
+    - error
+    - always
+  keyword-spacing:
+    - error
+    - before: true
+      after: true
+  space-before-function-paren:
+    - error
+    - anonymous: always
+      named: never
+  space-in-parens:
+    - error
+    - never
+  space-infix-ops: error
+  quotes:
+    - error
+    - single
+
+    

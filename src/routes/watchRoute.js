@@ -23,7 +23,7 @@ const upload = multer({
  * GET request 
  */
 router.get('', async (req, res) => {
-    const foundWatches = await Watch.find(req.query, {image: 0});
+    const foundWatches = await Watch.find(req.query, { image: 0 });
 
     res.status(StatusCodes.OK).send(foundWatches);
 });
@@ -64,7 +64,7 @@ router.put('/:id', isAuthenticated, isAdmin, async (req, res) => {
             {
                 $set: req.body
             },
-            {new: true}
+            { new: true }
         );
 
         res.status(StatusCodes.OK).send(updatedWatch);

@@ -1,5 +1,5 @@
-const { StatusCodes } = require("http-status-codes");
-const Cart = require("../models/Cart")
+const { StatusCodes } = require('http-status-codes');
+const Cart = require('../models/Cart')
 
 const getOrCreateCart = async (userId) => {
     const foundCart = await checkIfCartExists(userId);
@@ -15,12 +15,12 @@ const getOrCreateCart = async (userId) => {
         const savedCart = await cart.save();
         return savedCart;
     } catch (error) {
-        res.status(StatusCodes.BAD_REQUEST).send("Could not create a cart");
+        res.status(StatusCodes.BAD_REQUEST).send('Could not create a cart');
     }
 }
 
 const checkIfCartExists = async (userId) => {
-    const foundCart = await Cart.findOne({userId: userId});
+    const foundCart = await Cart.findOne({ userId: userId });
 
     return foundCart;
 }
